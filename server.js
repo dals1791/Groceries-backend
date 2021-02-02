@@ -9,7 +9,8 @@ const logger = require('morgan')
 const cors = require('cors')
 
 // Assign Port
-const PORT = procces.env.PORT
+require('dotenv').config()
+const PORT = process.env.PORT || 4000
 
 // MiddleWare----------------
 app.use(logger('dev'))
@@ -21,7 +22,7 @@ app.use(express.json())
 // Routes ------------------
 // INDEX ROUTE
 app.get("/", (req, res) => {
-  res.json({ hIndex: "Hello World!" });
+  res.json({ Index: "Hello World!" });
 });
 // Controllers
 
