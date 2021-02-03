@@ -4,14 +4,9 @@ const List = require("../models/List");
 const Item = require("../models/Item")
 
 // Index Route ------------------------------------------
-router.get('/',   (req, res) => {
-  List.find({}).then(allLists =>{
-      res.json({
-          lists: allLists
-      })
-  }).catch( err => {res.json({status: 400})
-})
-})
+router.get("/", async (req, res) => {
+  res.json(await List.find({}));
+});
 // Create Routes ----------------------------------------
 // router.post("/", async (req, res) => {
 //   res.json(await List.create(req.body));    
