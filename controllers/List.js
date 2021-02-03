@@ -5,7 +5,7 @@ const Item = require("../models/Item")
 
 // Index Route ------------------------------------------
 router.get("/", async (req, res) => {
-  res.json(await List.find({}).populate('fruits'));
+  res.json(await List.find({}).populate('items'));
 });
 // Create Routes ----------------------------------------
 router.post("/", async (req, res) => {
