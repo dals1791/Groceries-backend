@@ -21,8 +21,8 @@ router.post("/:listId", async (req, res) => {
 router.put("/:id", async (req, res) => {
   res.json(
     await Item.findByIdAndUpdate(req.params.id, req.body, { new: true })
-    
     )
+    await returnsPromise().catch(e => { console.log(e) })
 });
 // Destroy Routes ----------------------------------------
 router.delete("/:id", async (req, res) => {
