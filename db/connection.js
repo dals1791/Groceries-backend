@@ -2,7 +2,7 @@
 require("dotenv").config();
 
 // mongoose connection----------------
-const MONGODBURI = "mongodb://localhost:27017/" + "grocerylistapi";
+const { MONGODBURI } = process.env;
 const mongoose = require("mongoose");
 const config = { useUnifiedTopology: true, useNewUrlParser: true };
 const db = mongoose.connection;
