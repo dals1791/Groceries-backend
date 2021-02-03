@@ -5,13 +5,12 @@ const Item = require("../models/Item")
 
 // Index Route ------------------------------------------
 router.get("/", async (req, res) => {
-  res.json(await List.find({}));
+  res.json(await List.find({}).populate('fruits'));
 });
 // Create Routes ----------------------------------------
 router.post("/", async (req, res) => {
   res.json(await List.create(req.body));    
 });
-
 
 // Update Routes ----------------------------------------
 router.put("/:id", async (req, res) => {
