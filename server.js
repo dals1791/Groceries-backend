@@ -22,10 +22,14 @@ app.use(express.json())
 // Routes ------------------
 // INDEX ROUTE
 app.get("/", (req, res) => {
-  res.json({ Index: "Hello World!" });
+  res.json({ Index: "Grocery Lists!" });
 });
 // Controllers
+const listRouter = require('./controllers/List')
+app.use("/lists", listRouter);
 
+const itemRouter = require('./controllers/Item')
+app.use("/items", itemRouter);
 // Listener-----------------
 app.listen(PORT, ()=>{
     console.log(`Listening on  ${PORT}`)
