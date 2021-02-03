@@ -8,21 +8,21 @@ router.get("/", async (req, res) => {
   res.json(await List.find({}));
 });
 // Create Routes ----------------------------------------
-// router.post("/", async (req, res) => {
-//   res.json(await List.create(req.body));    
-// });
+router.post("/", async (req, res) => {
+  res.json(await List.create(req.body));    
+});
 
 
-// // Update Routes ----------------------------------------
-// router.put("/:id", async (req, res) => {
-//   res.json(
-//     await List.findByIdAndUpdate(req.params.id, req.body, { new: true })
-//   );
-// });
+// Update Routes ----------------------------------------
+router.put("/:id", async (req, res) => {
+  res.json(
+    await List.findByIdAndUpdate(req.params.id, req.body, { new: true })
+  );
+});
 
-// // Destroy Routes ----------------------------------------
-// router.delete("/:id", async (req, res) => {
-//   res.json(await List.findByIdAndRemove(req.params.id));
-// });
+// Destroy Routes ----------------------------------------
+router.delete("/:id", async (req, res) => {
+  res.json(await List.findByIdAndRemove(req.params.id));
+});
 
 module.exports = router;
